@@ -109,7 +109,7 @@
      * color-2(#eb5e55)
      * color-3(#f2d0a4)
      */
-    --color-1: hsla(345, 93%, 44%, 1);
+    --color-1: rgb(255, 5, 5);
     --color-2: hsla(4, 79%, 63%, 1);
     --color-3: hsla(34, 75%, 80%, 1);
 
@@ -189,7 +189,7 @@
     /* others
      */
     --color-body  : var(--color-1);
-    --color-bg    : #14171B;
+    --color-bg    : #000000;
     --color-border: var(--color-gray-17);
 }
 
@@ -1570,7 +1570,7 @@ html, body {
 }
 
 body {
-    background: var(--color-body);
+    background:black !important;
     font-family: var(--font-1);
     font-size: var(--text-size);
     font-style: normal;
@@ -2910,21 +2910,26 @@ input::-moz-focus-inner {
     font-size: calc(var(--text-size) * 10);
     line-height: 1;
     letter-spacing: -0.02em;
-    color: var(--color-text);
-    opacity: .1;
+    color:white;
+    opacity: .14;
 }
 
 .section-title h3 {
+    font-size:2em;
     z-index: 2;
     font-weight: 500;
     color: var(--color-1);
-    padding-bottom: 2em;
+    padding-bottom: 0.7em;
     margin-top: 0;
     position: absolute;
     left: 1em;
     bottom: 0;
+    transition:color 0.5s ease;
 }
-
+.section-title h3:hover{
+    color:white;
+    cursor:pointer;
+}
 .display-1 {
     font-size: var(--text-xxl);
     font-weight: 500;
@@ -2939,8 +2944,12 @@ input::-moz-focus-inner {
     line-height: var(--vspace-1_25);
     margin-top: 0;
     margin-bottom: var(--vspace-0_5);
+    transition:color 0.5s ease;
 }
-
+.item-title:hover{
+    color:red;
+    cursor:pointer
+}
 
 /* ------------------------------------------------------------------- 
  * ## item list 
@@ -3081,7 +3090,7 @@ input::-moz-focus-inner {
 }
 
 .s-header.sticky {
-    background-color: var(--color-gray-19);
+    background-color:rgba(0, 0, 0, 0.983);
     opacity: 0;
     visibility: hidden;
     position: fixed;
@@ -3133,8 +3142,7 @@ input::-moz-focus-inner {
 }
 
 .s-header__logo img {
-    width: 68px;
-    height: 10px;
+    width: 120px;
     margin-bottom: 0;
 }
 
@@ -3147,30 +3155,31 @@ input::-moz-focus-inner {
 }
 
 .s-header__nav {
+    display: flex;
     list-style: none;
     font-family: var(--font-2);
     font-weight: 500;
-    font-size: 1rem;
+    font-size: 1.8rem;
     line-height: 6rem;
     padding-top: 1.4rem;
     padding-bottom: 1.4rem;
     margin: 0;
     text-transform: uppercase;
-    letter-spacing: .4em;
+    letter-spacing: .5em;
 }
 
 .s-header__nav a {
-    color: var(--color-gray-8);
+    color: white;
 }
 
-.s-header__nav a:hover, .s-header__nav a:focus {
-    color: white !important;
+.s-header__nav a:hover {
+    color:var(--color-1) !important;
 }
 
 .s-header__nav li {
     display: inline-block;
     padding-left: 0;
-    margin: 0 1rem;
+    margin: 0 3rem;
 }
 
 
@@ -3470,6 +3479,16 @@ input::-moz-focus-inner {
     }
 }
 
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.9;
+    z-index: -1;
+  }
 
 
 /* ===================================================================
@@ -3477,7 +3496,7 @@ input::-moz-focus-inner {
  *
  * ------------------------------------------------------------------- */
 .s-hero {
-    background-color: #121417;
+    background:url(../images/photoswipe/7985880-uhd_4096_2160_25fps.mp4);
     width: 100%;
     height: 100vh;
     min-height: calc(25.5 * var(--space));
@@ -3486,7 +3505,7 @@ input::-moz-focus-inner {
 }
 
 .s-hero__bg {
-    background-image: url(../images/hero-bg.jpg);
+    /* background-image: url(../images/hero-bg.jpg); */
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -3494,7 +3513,7 @@ input::-moz-focus-inner {
     top: 0;
     right: 0;
     bottom: 0;
-    left: 36.5vw;
+    /* left: 36.5vw; */
 }
 
 .s-hero__bg::after {
@@ -3595,13 +3614,13 @@ input::-moz-focus-inner {
 }
 
 .s-hero__content-social a {
+    font-size:2.5em;
     color: white;
     margin-right: 1.2rem;
 }
 
-.s-hero__content-social a:hover, 
-.s-hero__content-social a:focus {
-    color: var(--color-1-light);
+.s-hero__content-social a:hover {
+    color: var(--color-1);
 }
 
 .s-hero__content-social a:last-child {
@@ -4098,6 +4117,7 @@ html.no-csstransitions .s-hero__content {
     position: absolute;
     left: 0;
     top: -5px;
+    transition:background-color 1s ease;
 }
 
 .s-about__process .item-process {
@@ -4189,8 +4209,12 @@ html.no-csstransitions .s-hero__content {
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
+    transition: transform 1s ease;
 }
-
+.service-icon:hover{
+    transform:rotate(360deg);
+    cursor: pointer;
+}
 .service-icon--product-design {
     background-image: url(../images/icons/services/icon-product-design.svg);
 }
@@ -4494,7 +4518,9 @@ html.no-csstransitions .s-hero__content {
     min-height: 0;
     min-width: 0;
 }
-
+.column p{
+    color:white;
+}
 .clients__slide {
     display: block;
     opacity: .15;
