@@ -3620,6 +3620,7 @@ input::-moz-focus-inner {
 }
 
 .s-hero__content-social a:hover {
+    font-size: 3.0em;
     color: var(--color-1);
 }
 
