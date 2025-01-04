@@ -3122,6 +3122,11 @@ input::-moz-focus-inner {
  * ## header logo
  * ------------------------------------------------------------------- */
 .s-header__logo {
+    width:130px;
+    height: 40px;
+    background: url(/images/photoswipe/logo-white.png);
+    background-size: cover;
+    background-repeat: none;
     z-index: 101;
     display: inline-block;
     margin: 0;
@@ -3329,7 +3334,7 @@ input::-moz-focus-inner {
 
 .sticky .s-header__content .btn:hover svg path, 
 .sticky .s-header__content .btn:focus svg path {
-    fill: black;
+    fill: rgb(0, 0, 0);
 }
 
 
@@ -5040,3 +5045,20 @@ html.no-csstransitions .s-hero__content {
     background-color: white;
     
  }
+ [data-theme="light"] .s-header.sticky .s-header__content .btn:hover, 
+ .s-header.sticky .s-header__content .btn:focus, 
+ .s-header .s-header__content .btn:hover, 
+ .s-header .s-header__content .btn:focus {
+     background-color: black !important;
+     border-color: black     !important;
+     color:white;
+ }
+ [data-theme="light"].s-header__content .btn svg path {
+    fill: white;
+}
+[data-theme="light"] .s-header__logo{
+    background: url(/images/photoswipe/logo-black.png);
+    background-size:cover !important;
+    background-repeat: none !important;
+}
+ 
