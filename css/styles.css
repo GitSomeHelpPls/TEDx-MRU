@@ -4834,17 +4834,17 @@ html.no-csstransitions .s-hero__content {
 }
 
 .s-footer__block--end .btn {
-    background-color: white;
-    border: .2rem solid white;
-    color: black;
+    background-color: var(--color-1);
+    /* border: .2rem solid white; */
+    color: white;
     margin-right: 0;
     margin-bottom: var(--vspace-1);
 }
 
 .s-footer__block--end .btn:hover, .s-footer__block--end .btn:focus {
-    background-color: var(--color-gray-19);
+    background-color: white;
     border: 0.2rem solid var(--color-gray-19);
-    color: white;
+    color: black;
 }
 
 
