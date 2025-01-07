@@ -1,10 +1,10 @@
+
 document.addEventListener("DOMContentLoaded", () => {
     const themeSwitch = document.getElementById('theme-switch');
-    const currentTheme = localStorage.getItem('theme') || 'dark';
 
-    // Apply the saved theme
-    document.documentElement.setAttribute('data-theme', currentTheme);
-    themeSwitch.setAttribute('data-active', currentTheme === 'light');
+    // Force set the theme to light mode on page load
+    document.documentElement.setAttribute('data-theme', 'light');
+    themeSwitch.setAttribute('data-active', true);
 
     // Add event listener for the switch
     themeSwitch.addEventListener('click', () => {
@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.documentElement.setAttribute('data-theme', newTheme);
         themeSwitch.setAttribute('data-active', !isLightMode);
 
-        // Save the theme to localStorage
+        // Save the new theme to localStorage
         localStorage.setItem('theme', newTheme);
     });
 });

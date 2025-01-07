@@ -109,7 +109,7 @@
      * color-2(#eb5e55)
      * color-3(#f2d0a4)
      */
-    --color-1: rgb(255, 5, 5);
+    --color-1: #EB0028;
     --color-2: hsla(4, 79%, 63%, 1);
     --color-3: hsla(34, 75%, 80%, 1);
 
@@ -1644,7 +1644,10 @@ h5, .h5, h6, .h6 {
     margin-top: var(--vspace-1_5);
     margin-bottom: var(--vspace-0_5);
 }
-
+.wh{
+    color:white;
+    padding-left: 30px;
+}
 h1, .h1 {
     font-size: var(--text-display-1);
     line-height: var(--vspace-2);
@@ -2947,7 +2950,7 @@ input::-moz-focus-inner {
     transition:color 0.5s ease;
 }
 .item-title:hover{
-    color:red;
+    color:#EB0028;
     cursor:pointer
 }
 
@@ -3505,7 +3508,7 @@ input::-moz-focus-inner {
  *
  * ------------------------------------------------------------------- */
 .s-hero {
-    background:url(../images/photoswipe/7985880-uhd_4096_2160_25fps.mp4);
+    background:url(../images/photoswipe+);
     width: 100%;
     height: 100vh;
     min-height: calc(25.5 * var(--space));
@@ -4803,8 +4806,13 @@ html.no-csstransitions .s-hero__content {
 }
 
 .s-footer .h6 {
-    color: black;
+    color: white;
     margin-top: 0;
+    transition: color 0.4s ease;
+}
+.s-footer .h6:hover{
+    color:var(--color-1);
+    cursor:pointer;
 }
 
 
@@ -4927,7 +4935,7 @@ html.no-csstransitions .s-hero__content {
     line-height: 6.4rem;
     text-align: center;
     border-radius: 50%;
-    background-color: var(--color-gray-19) !important;
+    background-color:white !important;
     -webkit-transition: all .3s;
     transition: all .3s;
     position: relative;
@@ -5003,6 +5011,12 @@ html.no-csstransitions .s-hero__content {
         font-size: 1.4rem;
     }
 }
+.s-about__process p{
+    cursor: pointer ;
+}
+.wht{
+    color:#EB0028;
+}
 .switch {
             
             
@@ -5061,4 +5075,38 @@ html.no-csstransitions .s-hero__content {
     background-size:cover !important;
     background-repeat: none !important;
 }
- 
+[data-theme="light"] .s-about{
+    background-color: white;
+}
+[data-theme="light"] .large-6 h1{
+    color: black;
+}
+[data-theme="light"] .large-6 p{
+    color:black;
+}
+/* [data-theme="light"] .s-hero{
+    background:url(/images/photoswipe/brightness\ inc.mp4);
+    background-size:cover !important;
+    background-repeat:no-repeat !important;
+} */
+[data-theme="light"] .video-background{
+    filter: brightness(200%);
+}
+[data-theme="light"] .section-title::before{
+    color:#000000;
+}
+[data-theme="light"] .section-title h3:hover{
+    color: black;
+}
+[data-theme="light"] .s-about__process h3{
+    color:black;
+}
+[data-theme="light"] .s-about__process h3:hover{
+    color:#EB0028;
+}
+[data-theme="light"] .s-about__process p{
+    color:black;
+}
+[data-theme="light"] .ss-go-top a{
+    background-color:black ;
+}
