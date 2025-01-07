@@ -965,6 +965,14 @@ textarea {
     max-width: 100%;
 }
 
+.trnsn{
+    color:#EB0028 !important;
+    transition: color 0.4s ease-in !important;
+    cursor: pointer; 
+}
+.trnsn:hover{
+    color:white !important;
+}
 
 /* ------------------------------------------------------------------- 
  * ## medium screen devices
@@ -2934,11 +2942,14 @@ input::-moz-focus-inner {
     cursor:pointer;
 }
 .display-1 {
+    color:white;
     font-size: var(--text-xxl);
     font-weight: 500;
     line-height: var(--vspace-1_75);
     margin-top: 0;
+    transition:color 0.5s ease; 
 }
+
 
 .item-title {
     font-family: var(--font-2);
@@ -4054,7 +4065,7 @@ html.no-csstransitions .s-hero__content {
     display: block;
     width: 28rem;
     height: 17.6rem;
-    background-image: url(/IGNITE\,\ INNOVATE\,INSPIRE\ -\ Copy.png);
+    background-image: url(/images/dots.svg);
     opacity: .25;
     position: absolute;
     top: 0;
@@ -4750,7 +4761,7 @@ html.no-csstransitions .s-hero__content {
 .s-contact__email {
     margin-top: var(--vspace-1_5);
     font-family: var(--font-2);
-    font-size: calc(var(--text-size) * 6.6);
+    font-size:calc(var(--text-size) * 6.6);
     font-weight: 500;
     letter-spacing: -0.01em;
     line-height: 1;
@@ -4773,7 +4784,7 @@ html.no-csstransitions .s-hero__content {
  * ------------------------------------------------------------------- */
 @media screen and (max-width: 1600px) {
     .s-contact__email {
-        font-size: calc(var(--text-size) * 6);
+        font-size: calc(var(--text-size) * 3);
     }
 }
 
@@ -4803,6 +4814,10 @@ html.no-csstransitions .s-hero__content {
 
 .s-footer a {
     color: white;
+    transition: color 0.4s ease;
+}
+.s-footer a:hover{
+    color:#EB0028;
 }
 
 .s-footer .h6 {
@@ -4939,6 +4954,8 @@ html.no-csstransitions .s-hero__content {
     -webkit-transition: all .3s;
     transition: all .3s;
     position: relative;
+    color:var(--color-1);
+    font-size: 1.9em;
 }
 
 .ss-go-top.link-is-visible {
@@ -5108,5 +5125,5 @@ html.no-csstransitions .s-hero__content {
     color:black;
 }
 [data-theme="light"] .ss-go-top a{
-    background-color:black ;
+    background-color:black !important;
 }
