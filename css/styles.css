@@ -1622,7 +1622,7 @@ a:hover, a:active {
  * -------------------------------------------------------------------- */
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     font-family: var(--font-2);
-    font-weight: 500;
+    font-weight: 800;
     font-style: normal;
     color: var(--color-text-dark);
     -webkit-font-variant-ligatures: common-ligatures;
@@ -1679,8 +1679,8 @@ h5, .h5 {
 }
 
 h6, .h6 {
-    font-size: var(--text-sm);
-    font-weight: 600;
+    font-size: var(--text-md);
+    font-weight: 900;
     line-height: var(--vspace-0_75);
     text-transform: uppercase;
     letter-spacing: .22em;
@@ -4046,7 +4046,7 @@ html.no-csstransitions .s-hero__content {
     display: block;
     width: 28rem;
     height: 17.6rem;
-    background-image: url(../images/dots.svg);
+    background-image: url(/IGNITE\,\ INNOVATE\,INSPIRE\ -\ Copy.png);
     opacity: .25;
     position: absolute;
     top: 0;
@@ -4081,7 +4081,7 @@ html.no-csstransitions .s-hero__content {
 }
 
 .s-about__photo {
-    background-image: url(../IGNITE\,\ INNOVATE\,INSPIRE.png);
+    background-image: url(../IGNITE\,\ INNOVATE\,INSPIRE\ -\ Copy.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -4549,7 +4549,7 @@ html.no-csstransitions .s-hero__content {
  * ------------------------------------------------------------------- */
 .testimonials {
     background-color: var(--color-bg);
-    max-width: 800px;
+    max-width: 1000px;
     padding-top: var(--vspace-4);
     padding-bottom: var(--vspace-1_5);
     text-align: center;
