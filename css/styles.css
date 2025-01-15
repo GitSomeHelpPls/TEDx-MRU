@@ -5121,7 +5121,9 @@ html.no-csstransitions .s-hero__content {
     background-repeat: none !important;
 }
 [data-theme="light"] .s-about{
-    background-color: rgb(241, 210, 210);
+    background-color: white;
+    /* background-color: rgb(241, 210, 210); */
+
 }
 [data-theme="light"] .large-6 h1{
     color: black;
