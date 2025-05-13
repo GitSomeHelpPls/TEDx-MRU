@@ -328,3 +328,31 @@
     })();
 
 })(jQuery);
+
+
+const track = document.querySelector('.carousel-track');
+const slides = document.querySelectorAll('.carousel-slide');
+const prev = document.querySelector('.prev');
+const next = document.querySelector('.next');
+
+let currentSlide = 0;
+
+function updateSlide() {
+  const width = slides[0].clientWidth;
+  track.style.transform = `translateX(-${currentSlide * width}px)`;
+}
+
+prev.addEventListener('click', () => {
+  currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+  updateSlide();
+});
+
+next.addEventListener('click', () => {
+  currentSlide = (currentSlide + 1) % slides.length;
+  updateSlide();
+});
+
+// Auto-slide every 3 seconds
+setInterval(() => {
+  next.click();
+}, 3000);
