@@ -5161,3 +5161,58 @@ position: absolute;
         color:white; 
      }
 }
+.s-car{
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    background-color: var(--color-bg);
+    padding-top: calc(2.7 * var(--space));
+    padding-bottom: var(--vspace-2);
+}
+.carousel {
+  position: relative;
+  width:100vw;
+  height: 830px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.carousel-track {
+  display: flex;
+    width: 100vw;
+  align-items: center;
+  transition: transform 0.5s ease-in-out;
+}
+.carousel-slide { 
+  flex-shrink: 0;
+}
+.prev,.next{
+    display: none;
+}
+/* .prev, .next {
+  z-index: 2;
+    position: absolute;
+    top: calc(2.5 * var(--space));
+    width: var(--vspace-1);
+    height: var(--vspace-1);
+    border: none;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    cursor: pointer;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    font: 0/0 a;
+    text-shadow: none;
+    color: transparent;
+    opacity: .55;
+} */
+
+/* .prev { left: 10px; }
+.next { right: 10px; } */
+
+
+
