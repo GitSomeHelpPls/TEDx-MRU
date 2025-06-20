@@ -96,7 +96,7 @@
                 <div class="img">
                     <!-- <img src="images/header.jpg" alt=""> -->
 
-                    <div class="carousel">
+                    <!-- <div class="carousel">
                         <div class="carousel-track">
                             <img src="/images/EventSpeaker1.jpg" class="carousel-slide">
                             <img src="/images/EventSpeaker2.jpg" class="carousel-slide">
@@ -104,17 +104,17 @@
                         </div>
                         <button class="prev">‹</button>
                         <button class="next">›</button>
-                    </div>
+                    </div> -->
 
                     <!-- <img src="images/header.jpg" alt=""> -->
-                </div>
+                <!-- </div>
                 <div class="Overlay"></div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- Events Showcase Section -->
-    <section class="events-showcase">
+    <!-- <section class="events-showcase">
         <div class="floating-elements">
             <div class="floating-circle"></div>
             <div class="floating-circle"></div>
@@ -125,11 +125,11 @@
             <div class="events-header">
                 <h2 class="events-title">Past Events</h2>
                 <p class="events-subtitle">Explore our journey of inspiring talks, thought-provoking discussions, and transformative experiences that have challenged conventional thinking and sparked innovation.</p>
-            </div>
+            </div> -->
 
-            <div class="events-grid">
+            <!-- <div class="events-grid"> -->
                 <!-- Featured Past Event -->
-                <div class="event-card featured-event">
+                <!-- <div class="event-card featured-event">
                     <div class="event-image">
                         <div class="event-date">March 15, 2024</div>
                     </div>
@@ -152,10 +152,10 @@
                             <i class="fas fa-play"></i>
                         </a>
                     </div>
-                </div>
+                </div> -->
 
                 <!-- Past Events -->
-                <div class="event-card">
+                <!-- <div class="event-card">
                     <div class="event-image">
                         <div class="event-date">Oct 12, 2023</div>
                     </div>
@@ -255,8 +255,858 @@
     </section>
 
     <section class="text">
-        
+
+    </section> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events - TEDxMRU</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #000;
+            color: #fff;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* Animated Background */
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(230, 43, 30, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(230, 43, 30, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 60% 80%, rgba(255, 87, 87, 0.1) 0%, transparent 50%);
+            animation: bgShift 25s ease-in-out infinite;
+        }
+
+        /* Hero Section with Interactive Elements */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding: 50px 20px;
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 2;
+            animation: fadeInUp 1.8s ease-out;
+            max-width: 1200px;
+        }
+
+        .hero-title {
+            font-size: 7rem;
+            font-weight: 900;
+            margin-bottom: 30px;
+            background: linear-gradient(45deg, #fff, #e62b1e, #fff, #ff6b6b, #e62b1e);
+            background-size: 400% 400%;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientFlow 5s ease-in-out infinite;
+            letter-spacing: -3px;
+            text-shadow: 0 0 40px rgba(230, 43, 30, 0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 2rem;
+            opacity: 0.9;
+            max-width: 900px;
+            margin: 0 auto 50px;
+            line-height: 1.5;
+            font-weight: 300;
+            color: #f0f0f0;
+        }
+
+        .event-counter {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .counter-item {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 20px;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .counter-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(230, 43, 30, 0.1), transparent);
+            transition: left 0.6s;
+        }
+
+        .counter-item:hover::before {
+            left: 100%;
+        }
+
+        .counter-item:hover {
+            transform: translateY(-15px) scale(1.05);
+            background: rgba(230, 43, 30, 0.1);
+            border-color: rgba(230, 43, 30, 0.3);
+            box-shadow: 0 20px 40px rgba(230, 43, 30, 0.2);
+        }
+
+        .counter-number {
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: #e62b1e;
+            display: block;
+            animation: countUp 2.5s ease-out;
+            position: relative;
+            z-index: 2;
+        }
+
+        .counter-label {
+            font-size: 1.1rem;
+            opacity: 0.8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 10px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Floating Elements */
+        .floating-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .floating-shape {
+            position: absolute;
+            opacity: 0.15;
+            animation: floatAround 20s linear infinite;
+            font-size: 2.5rem;
+            filter: drop-shadow(0 0 10px rgba(230, 43, 30, 0.3));
+        }
+
+        .shape-1 { top: 15%; left: 10%; animation-delay: 0s; }
+        .shape-2 { top: 25%; right: 15%; animation-delay: 4s; }
+        .shape-3 { bottom: 30%; left: 20%; animation-delay: 8s; }
+        .shape-4 { bottom: 20%; right: 25%; animation-delay: 12s; }
+        .shape-5 { top: 50%; left: 5%; animation-delay: 16s; }
+        .shape-6 { top: 70%; right: 10%; animation-delay: 2s; }
+
+        /* Our Journey Section */
+        .journey {
+            padding: 150px 50px;
+            background: linear-gradient(135deg, #111 0%, #1a1a1a 50%, #0f0f0f 100%);
+            position: relative;
+        }
+
+        .journey::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23333" stroke-width="0.5" opacity="0.3"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.1;
+        }
+
+        .journey-title {
+            text-align: center;
+            font-size: 4.5rem;
+            margin-bottom: 80px;
+            color: #e62b1e;
+            position: relative;
+            z-index: 2;
+        }
+
+        .journey-title::after {
+            content: '';
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, #e62b1e, transparent);
+            animation: pulse 2.5s ease-in-out infinite;
+        }
+
+        .journey-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 80px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .journey-stats {
+            background: rgba(255, 255, 255, 0.02);
+            padding: 60px 50px;
+            border-radius: 30px;
+            border: 1px solid rgba(230, 43, 30, 0.2);
+            backdrop-filter: blur(15px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .journey-stats::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(230, 43, 30, 0.1), transparent);
+            animation: shimmer 4s infinite;
+        }
+
+        .stat-item {
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 2;
+            padding: 20px;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .stat-item:hover {
+            background: rgba(230, 43, 30, 0.05);
+            transform: translateX(10px);
+        }
+
+        .stat-number {
+            font-size: 4rem;
+            font-weight: bold;
+            color: #e62b1e;
+            line-height: 1;
+            animation: numberGlow 4s ease-in-out infinite;
+        }
+
+        .stat-label {
+            font-size: 1.3rem;
+            opacity: 0.8;
+            margin-top: 8px;
+        }
+
+        .journey-description {
+            font-size: 1.4rem;
+            line-height: 1.8;
+            opacity: 0.9;
+        }
+
+        .journey-description h3 {
+            color: #e62b1e;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .journey-description p {
+            margin-bottom: 20px;
+        }
+
+        /* Speakers Showcase */
+        .speakers {
+            padding: 150px 50px;
+            background: #000;
+            position: relative;
+        }
+
+        .speakers-title {
+            text-align: center;
+            font-size: 4.5rem;
+            margin-bottom: 40px;
+            color: #fff;
+            position: relative;
+        }
+
+        .speakers-subtitle {
+            text-align: center;
+            font-size: 1.6rem;
+            opacity: 0.7;
+            margin-bottom: 80px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .speakers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .speaker-card {
+            background: linear-gradient(145deg, #1a1a1a, #0a0a0a);
+            border-radius: 25px;
+            overflow: hidden;
+            position: relative;
+            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            border: 1px solid rgba(230, 43, 30, 0.1);
+        }
+
+        .speaker-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(230, 43, 30, 0.1), transparent, rgba(230, 43, 30, 0.1));
+            opacity: 0;
+            transition: opacity 0.4s;
+            pointer-events: none;
+        }
+
+        .speaker-card:hover::before {
+            opacity: 1;
+        }
+
+        .speaker-card:hover {
+            transform: translateY(-25px) rotateX(5deg);
+            box-shadow: 0 35px 70px rgba(230, 43, 30, 0.3);
+        }
+
+        .speaker-avatar {
+            width: 100%;
+            height: 280px;
+            background: linear-gradient(135deg, #e62b1e, #ff4757, #e62b1e);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 6rem;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .speaker-avatar::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+            transform: translate(-50%, -50%) scale(0);
+            transition: transform 0.6s;
+        }
+
+        .speaker-card:hover .speaker-avatar::after {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .speaker-info {
+            padding: 40px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .speaker-name {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 12px;
+            color: #e62b1e;
+        }
+
+        .speaker-title {
+            font-size: 1.2rem;
+            opacity: 0.8;
+            margin-bottom: 25px;
+            color: #fff;
+        }
+
+        .speaker-bio {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            opacity: 0.7;
+            margin-bottom: 25px;
+        }
+
+        .speaker-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag {
+            background: rgba(230, 43, 30, 0.2);
+            color: #e62b1e;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(230, 43, 30, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .tag:hover {
+            background: rgba(230, 43, 30, 0.3);
+            transform: scale(1.05);
+        }
+
+        /* Interactive Gallery */
+        .gallery {
+            padding: 150px 50px;
+            background: linear-gradient(135deg, #111 0%, #0a0a0a 100%);
+        }
+
+        .gallery-title {
+            text-align: center;
+            font-size: 4.5rem;
+            margin-bottom: 80px;
+            color: #e62b1e;
+        }
+
+        .gallery-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .gallery-item {
+            height: 350px;
+            background: linear-gradient(45deg, #1a1a1a, #333);
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            color: #e62b1e;
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid transparent;
+        }
+
+        .gallery-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, #e62b1e, #ff6b6b, #e62b1e);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.1) rotate(3deg);
+            border-color: #e62b1e;
+            box-shadow: 0 25px 50px rgba(230, 43, 30, 0.4);
+        }
+
+        .gallery-item:hover::before {
+            opacity: 0.15;
+        }
+
+        .gallery-item span {
+            position: relative;
+            z-index: 2;
+            transition: transform 0.4s;
+        }
+
+        .gallery-item:hover span {
+            transform: scale(1.3) rotate(-3deg);
+        }
+
+        /* Coming Soon Section */
+        .coming-soon {
+            padding: 150px 50px;
+            background: radial-gradient(ellipse at center, #1a1a1a 0%, #000 100%);
+            text-align: center;
+            position: relative;
+        }
+
+        .coming-soon-title {
+            font-size: 5.5rem;
+            font-weight: 900;
+            margin-bottom: 40px;
+            background: linear-gradient(45deg, #e62b1e, #fff, #e62b1e, #ff6b6b);
+            background-size: 300% 300%;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientMove 4s ease-in-out infinite;
+        }
+
+        .coming-soon-subtitle {
+            font-size: 1.6rem;
+            opacity: 0.8;
+            margin-bottom: 60px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .notification-signup {
+            display: flex;
+            max-width: 600px;
+            margin: 0 auto;
+            gap: 20px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50px;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .notification-signup:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(230, 43, 30, 0.3);
+        }
+
+        .notification-input {
+            flex: 1;
+            padding: 20px 30px;
+            background: transparent;
+            border: none;
+            color: #fff;
+            font-size: 1.1rem;
+            border-radius: 25px;
+            outline: none;
+        }
+
+        .notification-input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .notify-btn {
+            background: linear-gradient(45deg, #e62b1e, #ff4757);
+            color: white;
+            padding: 20px 35px;
+            border: none;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.4s;
+            font-size: 1.1rem;
+        }
+
+        .notify-btn:hover {
+            background: linear-gradient(45deg, #ff4757, #e62b1e);
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(230, 43, 30, 0.4);
+        }
+
+        /* Scroll indicator */
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            z-index: 9999;
+        }
+
+        .scroll-progress {
+            height: 100%;
+            background: linear-gradient(90deg, #e62b1e, #ff6b6b);
+            width: 0%;
+            transition: width 0.1s ease;
+        }
+
+        /* Enhanced Animations */
+        @keyframes gradientFlow {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        @keyframes fadeInUp {
+            from { 
+                opacity: 0; 
+                transform: translateY(100px) scale(0.9);
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        @keyframes countUp {
+            from { 
+                transform: scale(0) rotate(180deg); 
+                opacity: 0; 
+            }
+            to { 
+                transform: scale(1) rotate(0deg); 
+                opacity: 1; 
+            }
+        }
+
+        @keyframes floatAround {
+            0% { transform: translate(0, 0) rotate(0deg); opacity: 0.1; }
+            25% { transform: translate(60px, -40px) rotate(90deg); opacity: 0.2; }
+            50% { transform: translate(-30px, -60px) rotate(180deg); opacity: 0.15; }
+            75% { transform: translate(-50px, 30px) rotate(270deg); opacity: 0.1; }
+            100% { transform: translate(0, 0) rotate(360deg); opacity: 0.1; }
+        }
+
+        @keyframes bgShift {
+            0%, 100% { 
+                filter: hue-rotate(0deg) brightness(1); 
+            }
+            33% { 
+                filter: hue-rotate(10deg) brightness(1.1); 
+            }
+            66% { 
+                filter: hue-rotate(-10deg) brightness(0.9); 
+            }
+        }
+
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        @keyframes numberGlow {
+            0%, 100% { 
+                text-shadow: 0 0 10px rgba(230, 43, 30, 0.5); 
+            }
+            50% { 
+                text-shadow: 0 0 30px rgba(230, 43, 30, 0.8), 0 0 40px rgba(230, 43, 30, 0.6); 
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; transform: scaleX(1); }
+            50% { opacity: 1; transform: scaleX(1.1); }
+        }
+
+        @keyframes gradientMove {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 4rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.4rem;
+            }
+
+            .event-counter {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .journey-content {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .speakers, .gallery, .coming-soon, .journey {
+                padding: 100px 30px;
+            }
+
+            .speakers-title, .gallery-title, .coming-soon-title, .journey-title {
+                font-size: 3rem;
+            }
+
+            .speakers-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .notification-signup {
+                flex-direction: column;
+                border-radius: 20px;
+            }
+
+            .gallery-container {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 20px;
+            }
+
+            .gallery-item {
+                height: 250px;
+                font-size: 3rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 3rem;
+            }
+
+            .counter-number {
+                font-size: 2.5rem;
+            }
+
+            .speaker-info {
+                padding: 25px;
+            }
+
+            .journey-stats {
+                padding: 40px 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-indicator">
+        <div class="scroll-progress" id="scrollProgress"></div>
+    </div>
+
+    <div class="animated-bg"></div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="floating-elements">
+            <div class="floating-shape shape-1">🎤</div>
+            <div class="floating-shape shape-2">💡</div>
+            <div class="floating-shape shape-3">🚀</div>
+            <div class="floating-shape shape-4">🎯</div>
+            <div class="floating-shape shape-5">⭐</div>
+            <div class="floating-shape shape-6">🎪</div>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">EVENTS</h1>
+            <p class="hero-subtitle">Where Ideas Ignite and Minds Transform - Experience the Power of Thought-Provoking Conversations</p>
+            <div class="event-counter">
+                <div class="counter-item">
+                    <span class="counter-number">1</span>
+                    <span class="counter-label">Event Completed</span>
+                </div>
+                <div class="counter-item">
+                    <span class="counter-number">8</span>
+                    <span class="counter-label">Inspiring Speakers</span>
+                </div>
+                <div class="counter-item">
+                    <span class="counter-number">300+</span>
+                    <span class="counter-label">Lives Touched</span>
+                </div>
+            </div>
+        </div>
     </section>
+
+    <!-- Our Journey -->
+    <section class="journey">
+        <h2 class="journey-title">Our Journey</h2>
+        <div class="journey-content">
+            <div class="journey-stats">
+                <div class="stat-item">
+                    <div class="stat-number">2024</div>
+                    <div class="stat-label">Our Inaugural Year</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">8</div>
+                    <div class="stat-label">Extraordinary Speakers</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">300+</div>
+                    <div class="stat-label">Attendees Inspired</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">∞</div>
+                    <div class="stat-label">Ideas Worth Spreading</div>
+                </div>
+            </div>
+            <div class="journey-description">
+                <h3>The Beginning of Something Extraordinary</h3>
+                <p>In 2024, TEDxMRU took its first bold step into the world of ideas worth spreading. Our inaugural event wasn't just a conference – it was a catalyst for change, a platform for innovation, and a celebration of human potential.</p>
+                <p>From technology pioneers to social innovators, from creative visionaries to scientific breakthroughs, our speakers shared stories that challenged perspectives and inspired action. Each talk was carefully curated to spark conversations that continue long after the curtains fell.</p>
+                <p>This is just the beginning. The foundation has been laid, the community has been ignited, and the stage is set for even more transformative experiences ahead.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Speakers Showcase -->
+    <section class="speakers">
+        <h2 class="speakers-title">Our Inaugural Speakers</h2>
+        <p class="speakers-subtitle">Meet the visionaries who brought our first event to life with their groundbreaking ideas and inspiring stories</p>
+        <div class="speakers-grid">
+            <div class="speaker-card">
+                <div class="speaker-avatar">🎤</div>
+                <div class="speaker-info">
+                    <h3 class="speaker-name">Dr. Priya Sharma</h3>
+                    <p class="speaker-title">AI Research Scientist & Tech Innovator</p>
+                    <p class="speaker-bio">Pioneering the future of artificial intelligence with groundbreaking research in neural networks and machine learning applications that are reshaping industries.</p>
+                    <div class="speaker-tags">
+                        <span class="tag">AI</span>
+                        <span class="tag">Innovation</span>
+                        <span class="tag">Future Tech</span>
+                    </div>
+                </div>
+            </div>
+            <div class="speaker-card">
+                <div class="speaker-avatar">🚀</div>
+                <div class="speaker-info">
+                    <h3 class="speaker-name">Rajesh Kumar</h3>
+                    <p class="speaker-title">Space Tech Entrepreneur</p>
+                    <p class="speaker-bio">Revolutionizing space exploration with affordable satellite technology and making space accessible to emerging nations and startups.</p>
+                    <div class="speaker-tags">
+                        <span class="tag">Space Tech</span>
+                        <span class="tag">Entrepreneurship</span>
+                        <span class="tag">Innovation</span>
+                    </div>
+                </div>
+            </div>
+            <div class="speaker-card">
+                <div class="speaker-avatar">🌱</div>
+                <div class="speaker-info">
+                    <h3 class="speaker-name">Ananya Gupta</h3>
+                    <p class="speaker-title">Climate Action Leader</p>
+                    <p class="speaker-bio">Leading the fight against climate change through innovative sustainability solutions and grassroots environmental movements.</p>
+                    <div class="speaker-tags">
+                        <span class="tag">Sustainability</span>
+                        <span class="tag">Climate Action</span>
+                        <span class="tag">Leadership</span>
+                    </div>
+                </div>
+            </div>
+            <div class="speaker-card">
+                <div class="speaker-avatar">🎨</div>
+                <div class="speaker-info">
+                    <h3 class="speaker-name">Vikram Singh</h3>
+                    <p class="speaker-title">Digital Artist & VR Pioneer</p>
+                    <p class="speaker-bio">Pushing the boundaries of creative expression through virtual reality art and immersive digital experiences that
 
     <!-- footer
     ================================================== -->
