@@ -3943,6 +3943,9 @@ html.no-csstransitions .s-hero__content {
     .s-hero__content h1 {
         font-size: 16rem;
     }
+    .section-title h3{
+        font-size:1.2em;
+    }
     .s-hero__content-about {
         font-size: 2.8rem;
     }
