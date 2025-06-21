@@ -193,31 +193,58 @@
                         <div class="events-speakers-avatars">
                             <div class="events-speaker-avatar-mini" 
                                  data-speaker="mahima-bakshi" 
-                                 title="Dr. Mahima Bakshi - Maternal-Child Wellness Specialist">MB</div>
+                                 data-name="Dr. Mahima Bakshi"
+                                 title="Dr. Mahima Bakshi - Maternal-Child Wellness Specialist">
+                                <img src="images/speakers/event1/MB.jpg" alt="Dr. Mahima Bakshi">
+                            </div>
                             <div class="events-speaker-avatar-mini" 
                                  data-speaker="amit-pandey" 
-                                 title="Mr. Amit Pandey - CEO & Leadership Mentor">AP</div>
+                                 data-name="Mr. Amit Pandey"
+                                 title="Mr. Amit Pandey - CEO & Leadership Mentor">
+                                <img src="images/speakers/event1/AP.jpg" alt="Mr. Amit Pandey">
+                            </div>
                             <div class="events-speaker-avatar-mini" 
                                  data-speaker="angad" 
-                                 title="Mr. Angad Talwar - Co-Founder, CosIQ">AT</div>
+                                 data-name="Mr. Angad Talwar"
+                                 title="Mr. Angad Talwar - Co-Founder, CosIQ">
+                                <img src="images/speakers/event1/AT.jpg" alt="Mr. Angad Talwar">
+                            </div>
                             <div class="events-speaker-avatar-mini" 
                                  data-speaker="gaurav" 
-                                 title="Mr. Gaurav Saini - Lt. Commander & Cybersecurity Strategist">GS</div>
+                                 data-name="Mr. Gaurav Saini"
+                                 title="Mr. Gaurav Saini - Lt. Commander & Cybersecurity Strategist">
+                                <img src="images/speakers/event1/GS.jpg" alt="Mr. Gaurav Saini">
+                            </div>
                             <div class="events-speaker-avatar-mini" 
                                  data-speaker="himanshu" 
-                                 title="Mr. Himanshu Saxena - Growth Lead & Storyteller">HS</div>
+                                 data-name="Mr. Himanshu Saxena"
+                                 title="Mr. Himanshu Saxena - Growth Lead & Storyteller">
+                                <img src="images/speakers/event1/HS.jpg" alt="Mr. Himanshu Saxena">
+                            </div>
                             <div class="events-speaker-avatar-mini" 
                                  data-speaker="k-k" 
-                                 title="Mr. KK Bhagchandani - Business Consultant">KB</div>
+                                 data-name="Mr. KK Bhagchandani"
+                                 title="Mr. KK Bhagchandani - Business Consultant">
+                                <img src="images/speakers/event1/KK.jpg" alt="Mr. KK Bhagchandani">
+                            </div>
                             <div class="events-speaker-avatar-mini" 
                                  data-speaker="sarthak-mittal" 
-                                 title="Mr. Sarthak Mittal - CEO & Youth Leader">SM</div>
+                                 data-name="Mr. Sarthak Mittal"
+                                 title="Mr. Sarthak Mittal - CEO & Youth Leader">
+                                <img src="images/speakers/event1/SM.jpg" alt="Mr. Sarthak Mittal">
+                            </div>
                             <div class="events-speaker-avatar-mini" 
                                  data-speaker="anila-bansal" 
-                                 title="Ms. Anila Bansal - Founder & CEO">AB</div>
+                                 data-name="Ms. Anila Bansal"
+                                 title="Ms. Anila Bansal - Founder & CEO">
+                                <img src="images/speakers/event1/AB.jpg" alt="Ms. Anila Bansal">
+                            </div>
                             <div class="events-speaker-avatar-mini" 
                                  data-speaker="sheena-singhania" 
-                                 title="Ms. Sheena Singhania - Founder & Cake Artist">SS</div>
+                                 data-name="Ms. Sheena Singhania"
+                                 title="Ms. Sheena Singhania - Founder & Cake Artist">
+                                <img src="images/speakers/event1/SS.jpg" alt="Ms. Sheena Singhania">
+                            </div>
                         </div>
                     </div>
 
@@ -280,22 +307,45 @@
     <div id="speakerModal" class="speaker-modal">
         <div class="speaker-modal-overlay"></div>
         <div class="speaker-modal-content">
-            <span class="speaker-modal-close">&times;</span> <!-- Changed from button to span -->
+            <span class="speaker-modal-close">&times;</span>
             <div class="speaker-modal-body">
-                <div class="speaker-image-container">
-                    <img id="speakerImage" src="" alt="" class="speaker-image">
-                    <div class="speaker-image-overlay"></div>
-                </div>
-                <div class="speaker-info">
+                <!-- Speaker Name and Title at top -->
+                <div class="speaker-info-header">
                     <h2 id="speakerName" class="speaker-name"></h2>
                     <p id="speakerTitle" class="speaker-designation"></p>
+                </div>
+                
+                <!-- Media Row: Picture and Video side by side -->
+                <div class="speaker-media-row">
+                    <div class="speaker-image-container">
+                        <img id="speakerImage" src="" alt="" class="speaker-image">
+                        <div class="speaker-image-overlay"></div>
+                    </div>
+                    
+                    <div class="speaker-video-container">
+                        <h4 class="speaker-video-title">TEDx Talk</h4>
+                        <div class="speaker-video-wrapper">
+                            <iframe id="speakerVideo" class="speaker-video" 
+                                    src="" 
+                                    title="TEDx Talk" 
+                                    allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Full Width Content Section -->
+                <div class="speaker-content-section">
                     <div class="speaker-bio">
+                        <h4>About</h4>
                         <p id="speakerBio"></p>
                     </div>
+                    
                     <div class="speaker-achievements">
                         <h4>Key Achievements</h4>
                         <ul id="speakerAchievements"></ul>
                     </div>
+
                     <div class="speaker-social">
                         <a id="speakerLinkedIn" href="#" target="_blank" class="speaker-social-link linkedin-link">
                             <i class="fab fa-linkedin"></i>
