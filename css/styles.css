@@ -5145,7 +5145,7 @@ position: absolute;
     color:var(--color-1);
 }
 [data-theme="light"] .events-showcase{
-       background: rgba(255, 255, 255, 0.1);
+       background: rgba(255, 255, 255, 0);
 }
 @media screen and (max-width: 900px) {
     [data-theme="light"] .s-header {

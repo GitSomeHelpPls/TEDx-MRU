@@ -17,6 +17,7 @@
     ================================================== -->
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="/about.css">
 
     <!-- script
     ================================================== -->
@@ -89,744 +90,14 @@
 
     </header> <!-- end s-header -->
 
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - TEDxMRU</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
 
-        body {
-            font-family: 'Arial', sans-serif;
-            background: #000;
-            color: #fff;
-            overflow-x: hidden;
-        }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
 
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            background: radial-gradient(circle at 50% 50%, #1a1a1a 0%, #000 70%);
-            overflow: hidden;
-        }
-
-        .hero-content {
-            text-align: center;
-            z-index: 3;
-        }
-
-        .hero h1 {
-            font-size: clamp(4rem, 12vw, 12rem);
-            font-weight: 900;
-            letter-spacing: -0.05em;
-            margin-bottom: 2rem;
-            background: linear-gradient(45deg, #fff, #e62b1e, #fff);
-            background-size: 200% 200%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: gradientShift 4s ease-in-out infinite, fadeInUp 1s ease-out;
-        }
-
-        .hero-subtitle {
-            font-size: 2rem;
-            font-weight: 300;
-            opacity: 0;
-            animation: fadeInUp 1s ease-out 0.5s both;
-            position: relative;
-        }
-
-        .hero-subtitle::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 0;
-            height: 2px;
-            background: #e62b1e;
-            animation: expandLine 1s ease-out 1.5s both;
-        }
-
-        /* Advanced Particle System */
-        .particle-system {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 2;
-        }
-
-        .particle {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background: rgba(230, 43, 30, 0.6);
-            border-radius: 50%;
-            animation: particleFloat 15s infinite linear;
-        }
-
-        .morphing-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background:
-                repeating-linear-gradient(0deg, rgba(180,180,180,0.08) 0px, rgba(180,180,180,0.08) 1px, transparent 1px, transparent 40px),
-                repeating-linear-gradient(90deg, rgba(180,180,180,0.08) 0px, rgba(180,180,180,0.08) 1px, transparent 1px, transparent 40px);
-            z-index: 1;
-        }
-
-        /* Interactive Mission Section */
-        .mission {
-            padding: 150px 0;
-            background:
-                linear-gradient(135deg, #f7f8fa 0%, #e9ecf3 100%),
-                repeating-linear-gradient(0deg, rgba(180,180,200,0.04) 0px, rgba(180,180,200,0.04) 1px, transparent 1px, transparent 40px),
-                repeating-linear-gradient(90deg, rgba(180,180,200,0.04) 0px, rgba(180,180,200,0.04) 1px, transparent 1px, transparent 40px);
-            color: #222;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .mission::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 120px;
-            background: linear-gradient(180deg, #000 0%, rgba(0,0,0,0.8) 30%, rgba(255,255,255,0.1) 70%, #fff 100%);
-        }
-
-        .mission-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 100px;
-            align-items: center;
-            position: relative;
-            z-index: 2;
-        }
-
-        .mission-left {
-            position: relative;
-        }
-
-        .mission-extra {
-            margin-bottom: 2.5rem;
-            background: rgba(230,43,30,0.06);
-            border-radius: 18px;
-            padding: 1.5rem 2rem;
-            box-shadow: 0 2px 12px rgba(230,43,30,0.07);
-            font-size: 1.35rem;
-        }
-
-        .mission-extra h3 {
-            font-size: 2.8rem;
-            font-weight: 800;
-            margin-bottom: 0.7rem;
-            color: #e62b1e;
-            line-height: 1.1;
-        }
-
-        .mission-extra p {
-            font-size: 1.5rem;
-            line-height: 1.6;
-            margin-bottom: 0.7rem;
-        }
-
-        .mission-extra ul {
-            list-style: disc inside;
-            margin: 0;
-            padding-left: 1rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .mission-extra li {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-            line-height: 1.5;
-        }
-
-        .mission-text {
-            opacity: 0;
-            transform: translateX(-100px);
-            transition: all 1s ease-out;
-        }
-
-        .mission-text.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .mission-text h2 {
-            font-size: 4rem;
-            font-weight: 900;
-            margin-bottom: 2rem;
-            line-height: 1.1;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .mission-text h2::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(230, 43, 30, 0.2), transparent);
-            animation: shimmer 2s infinite;
-        }
-
-        .mission-text p {
-            font-size: 1.25rem;
-            line-height: 1.8;
-            opacity: 0.8;
-            margin-bottom: 2rem;
-        }
-
-        .cta-button {
-            display: inline-block;
-            padding: 15px 40px;
-            background: #000;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(230, 43, 30, 0.8), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .cta-button:hover::before {
-            left: 100%;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
-        }
-
-        /* Advanced 3D Visual */
-        .mission-visual {
-            position: relative;
-            height: 500px;
-            perspective: 1000px;
-        }
-
-        .ted-cube {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) rotateX(0deg) rotateY(0deg);
-            width: 200px;
-            height: 200px;
-            transform-style: preserve-3d;
-            animation: rotateCube 20s infinite linear;
-        }
-
-        .cube-face {
-            position: absolute;
-            width: 200px;
-            height: 200px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            font-weight: 900;
-            color: #e62b1e;
-            border: 3px solid #000;
-            background: rgba(255, 255, 255, 0.9);
-        }
-
-        .cube-face.front { transform: rotateY(0deg) translateZ(100px); }
-        .cube-face.back { transform: rotateY(180deg) translateZ(100px); }
-        .cube-face.right { transform: rotateY(90deg) translateZ(100px); }
-        .cube-face.left { transform: rotateY(-90deg) translateZ(100px); }
-        .cube-face.top { transform: rotateX(90deg) translateZ(100px); }
-        .cube-face.bottom { transform: rotateX(-90deg) translateZ(100px); }
-
-        .floating-elements {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-        }
-
-        .float-item {
-            position: absolute;
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(45deg, #e62b1e, #ff6b6b);
-            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-            animation: floatAround 25s infinite ease-in-out;
-        }
-
-        .float-item:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; }
-        .float-item:nth-child(2) { top: 20%; right: 15%; animation-delay: -8s; }
-        .float-item:nth-child(3) { bottom: 30%; left: 20%; animation-delay: -16s; }
-        .float-item:nth-child(4) { bottom: 10%; right: 10%; animation-delay: -24s; }
-
-        /* Interactive Stats with Glassmorphism */
-        .stats {
-            padding: 120px 0;
-            background: #000;
-            position: relative;
-        }
-
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .stat-item {
-            padding: 50px 30px;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 25px;
-            text-align: center;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .stat-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(230, 43, 30, 0.1), rgba(255, 255, 255, 0.1));
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .stat-item:hover::before {
-            opacity: 1;
-        }
-
-        .stat-item:hover {
-            transform: translateY(-15px) scale(1.05);
-            border-color: rgba(230, 43, 30, 0.5);
-            box-shadow: 0 25px 50px rgba(230, 43, 30, 0.2);
-        }
-
-        .stat-number {
-            font-size: 3.5rem;
-            font-weight: 900;
-            color: #e62b1e;
-            margin-bottom: 1rem;
-            display: block;
-            position: relative;
-            z-index: 2;
-        }
-
-        .stat-label {
-            font-size: 1.3rem;
-            opacity: 0.9;
-            position: relative;
-            z-index: 2;
-        }
-
-        /* Advanced Team Cards */
-        .team {
-            padding: 150px 0;
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            color: #000;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 4rem;
-            font-weight: 900;
-            margin-bottom: 4rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 4px;
-            background: linear-gradient(45deg, #e62b1e, #ff6b6b);
-            border-radius: 2px;
-        }
-
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 50px;
-        }
-
-        .team-card {
-            background: #fff;
-            color: #222;
-            padding: 50px;
-            border-radius: 30px;
-            text-align: center;
-            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15), 0 2px 8px rgba(230,43,30,0.08);
-            border: 1px solid #e62b1e22;
-        }
-
-        .team-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: conic-gradient(from 0deg, transparent, rgba(230, 43, 30, 0.1), transparent);
-            opacity: 0;
-            transition: all 0.5s ease;
-            animation: rotate 10s linear infinite;
-        }
-
-        .team-card:hover::before {
-            opacity: 1;
-        }
-
-        .team-card:hover {
-            transform: translateY(-20px) rotateX(5deg);
-            box-shadow: 0 30px 60px rgba(0,0,0,0.25), 0 4px 16px rgba(230,43,30,0.12);
-            background: #f8f9fa;
-        }
-
-        .team-icon {
-            width: 100px;
-            height: 100px;
-            background: linear-gradient(135deg, #e62b1e, #ff6b6b);
-            border-radius: 50%;
-            margin: 0 auto 2rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.5rem;
-            font-weight: 900;
-            color: #fff;
-            position: relative;
-            z-index: 2;
-            transition: all 0.3s ease;
-        }
-
-        .team-card:hover .team-icon {
-            transform: scale(1.1) rotateY(360deg);
-        }
-
-        .team-role {
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            position: relative;
-            z-index: 2;
-        }
-
-        .team-desc {
-            opacity: 0.8;
-            line-height: 1.6;
-            font-size: 1.1rem;
-            position: relative;
-            z-index: 2;
-        }
-
-        /* Immersive Values Section */
-        .values {
-            padding: 150px 0;
-            background: #000;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .values-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                linear-gradient(45deg, rgba(230, 43, 30, 0.05) 0%, transparent 50%),
-                linear-gradient(-45deg, rgba(255, 255, 255, 0.02) 0%, transparent 50%);
-            animation: valuesAnimation 20s ease-in-out infinite;
-        }
-
-        .values-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 50px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .value-card {
-            padding: 60px 40px;
-            background: rgba(255, 255, 255, 0.08);
-            color: #fff;
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            border-radius: 35px;
-            text-align: center;
-            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.18), 0 2px 8px rgba(230,43,30,0.10);
-        }
-
-        .value-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(230, 43, 30, 0.1), transparent);
-            transition: left 0.6s ease;
-        }
-
-        .value-card:hover::before {
-            left: 100%;
-        }
-
-        .value-card:hover {
-            transform: translateY(-15px) scale(1.02);
-            border-color: rgba(230, 43, 30, 0.3);
-            background: rgba(230, 43, 30, 0.10);
-            box-shadow: 0 25px 50px rgba(230, 43, 30, 0.18), 0 4px 16px rgba(0,0,0,0.18);
-            color: #fff;
-        }
-
-        .value-icon {
-            font-size: 4rem;
-            margin-bottom: 2rem;
-            display: block;
-            transition: all 0.3s ease;
-            filter: grayscale(0);
-        }
-
-        .value-card:hover .value-icon {
-            transform: scale(1.2) rotateY(360deg);
-            filter: drop-shadow(0 0 20px rgba(230, 43, 30, 0.5));
-        }
-
-        .value-title {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            color: #fff;
-            position: relative;
-            text-shadow: 0 2px 8px #e62b1e44;
-        }
-
-        .value-desc {
-            opacity: 0.9;
-            line-height: 1.7;
-            font-size: 1.1rem;
-        }
-
-        /* Enhanced Animations */
-        @keyframes gradientShift {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes expandLine {
-            from { width: 0; }
-            to { width: 150px; }
-        }
-
-        @keyframes particleFloat {
-            0% {
-                transform: translateY(100vh) rotate(0deg);
-                opacity: 0;
-            }
-            10% {
-                opacity: 1;
-            }
-            90% {
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(-100px) rotate(360deg);
-                opacity: 0;
-            }
-        }
-
-        @keyframes morphBackground {
-            0%, 100% { transform: scale(1) rotate(0deg); }
-            50% { transform: scale(1.1) rotate(180deg); }
-        }
-
-        @keyframes shimmer {
-            0% { left: -100%; }
-            100% { left: 100%; }
-        }
-
-        @keyframes rotateCube {
-            0% { transform: translate(-50%, -50%) rotateX(0deg) rotateY(0deg); }
-            100% { transform: translate(-50%, -50%) rotateX(360deg) rotateY(360deg); }
-        }
-
-        @keyframes floatAround {
-            0%, 100% { transform: translate(0, 0) rotate(0deg); }
-            25% { transform: translate(30px, -30px) rotate(90deg); }
-            50% { transform: translate(-20px, -60px) rotate(180deg); }
-            75% { transform: translate(-40px, -10px) rotate(270deg); }
-        }
-
-        @keyframes statsBackground {
-            0%, 100% { transform: rotate(0deg) scale(1); }
-            50% { transform: rotate(180deg) scale(1.1); }
-        }
-
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        @keyframes valuesAnimation {
-            0%, 100% { opacity: 0.5; transform: scale(1); }
-            50% { opacity: 1; transform: scale(1.05); }
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 4rem;
-            }
-            
-            .mission-grid {
-                grid-template-columns: 1fr;
-                gap: 60px;
-            }
-            
-            .mission-text h2 {
-                font-size: 2.5rem;
-            }
-            
-            .stats-grid,
-            .values-grid,
-            .team-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .value-card,
-            .team-card {
-                padding: 40px 30px;
-            }
-            
-            .section-title {
-                font-size: 2.5rem;
-            }
-        }
-
-        /* Loading Animation */
-        .loading-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 9999;
-            transition: opacity 0.5s ease;
-        }
-
-        .loading-overlay.hidden {
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .loader {
-            width: 80px;
-            height: 80px;
-            border: 3px solid rgba(230, 43, 30, 0.3);
-            border-top: 3px solid #e62b1e;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .mission-floating {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-            pointer-events: none;
-        }
-        .mission .container,
-        .mission .mission-grid {
-            position: relative;
-            z-index: 1;
-        }
-    </style>
-</head>
-<body>
     <!-- Loading Overlay -->
     <div class="loading-overlay" id="loading">
         <div class="loader"></div>
     </div>
-
+<main>
     <!-- Hero Section -->
     <section class="hero">
         <div class="morphing-bg"></div>
@@ -848,60 +119,127 @@
         <div class="container">
             <div class="mission-grid">
                 <div class="mission-left">
-                    <div class="mission-extra">
-                        <h3>About TEDxMRU</h3>
-                        <p>TEDxMRU is an independently organized TED event at Manav Rachna University, dedicated to sharing ideas that inspire and empower our community.</p>
-                        <ul>
-                            <li>Annual flagship conference</li>
-                            <li>Workshops & networking sessions</li>
-                            <li>Global and local thought leaders</li>
-                            <li>Student-driven innovation</li>
-                        </ul>
+                    <div class="mission-content">
+                        <div class="mission-badge">
+                            <span class="badge-text">ABOUT US</span>
+                            <div class="badge-glow"></div>
+                        </div>
+                        <h2 class="mission-title">TEDxMRU</h2>
+                        <div class="mission-extra">
+                            <p class="mission-intro">We are an independently organized TED event at Manav Rachna University, dedicated to sharing ideas that inspire and empower our community through the power of transformative storytelling.</p>
+                            <div class="mission-features">
+                                <div class="feature-item">
+                                    <div class="feature-icon">🎯</div>
+                                    <span>Annual flagship conference</span>s
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">🎓</div>
+                                    <span>Workshops & networking sessions</span>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">🌟</div>
+                                    <span>Global and local thought leaders</span>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">💡</div>
+                                    <span>Student-driven innovation</span>
+                                </div>
+                            </div>
+                            <div class="mission-cta">
+                                <a href="#team" class="cta-button primary">
+                                    <span>Discover Our Journey</span>
+                                    <div class="button-glow"></div>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="mission-visual">
-                    <div class="ted-cube">
-                        <div class="cube-face front">TEDx</div>
-                        <div class="cube-face back">MRU</div>
-                        <div class="cube-face right">IDEAS</div>
-                        <div class="cube-face left">WORTH</div>
-                        <div class="cube-face top">SHARING</div>
-                        <div class="cube-face bottom">2025</div>
+                    <div class="visual-container">
+                        <div class="ted-cube">
+                            <div class="cube-face front">TEDx</div>
+                            <div class="cube-face back">MRU</div>
+                            <div class="cube-face right">IDEAS</div>
+                            <div class="cube-face left">WORTH</div>
+                            <div class="cube-face top">SHARING</div>
+                            <div class="cube-face bottom">2025</div>
+                        </div>
+                        <div class="orbit-rings">
+                            <div class="orbit-ring ring-1"></div>
+                            <div class="orbit-ring ring-2"></div>
+                            <div class="orbit-ring ring-3"></div>
+                        </div>
+                        <div class="floating-elements">
+                            <div class="float-item"></div>
+                            <div class="float-item"></div>
+                            <div class="float-item"></div>
+                            <div class="float-item"></div>
+                        </div>
                     </div>
-                    <div class="floating-elements">
-                        <div class="float-item"></div>
-                        <div class="float-item"></div>
-                        <div class="float-item"></div>
-                        <div class="float-item"></div>
+                </div>
+            </div>
+        </div>
+        <div class="stats-background">
+            <div class="stats-pattern"></div>
+        </div>
+        <div class="container">
+            <div class="stats-header">
+                <h2 class="stats-title">Our Impact in Numbers</h2>
+                <p class="stats-subtitle">Transforming lives through the power of ideas</p>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-content">
+                        <div class="stat-icon">👥</div>
+                        <span class="stat-number">1500+</span>
+                        <span class="stat-label">Attendees Inspired</span>
+                        <div class="stat-bar">
+                            <div class="stat-progress" data-width="95%"></div>
+                        </div>
                     </div>
+                    <div class="stat-glow"></div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-content">
+                        <div class="stat-icon">🎤</div>
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Exceptional Speakers</span>
+                        <div class="stat-bar">
+                            <div class="stat-progress" data-width="80%"></div>
+                        </div>
+                    </div>
+                    <div class="stat-glow"></div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-content">
+                        <div class="stat-icon">🏆</div>
+                        <span class="stat-number">8</span>
+                        <span class="stat-label">Years of Excellence</span>
+                        <div class="stat-bar">
+                            <div class="stat-progress" data-width="100%"></div>
+                        </div>
+                    </div>
+                    <div class="stat-glow"></div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-content">
+                        <div class="stat-icon">🌍</div>
+                        <span class="stat-number">2.5M+</span>
+                        <span class="stat-label">Global Reach</span>
+                        <div class="stat-bar">
+                            <div class="stat-progress" data-width="90%"></div>
+                        </div>
+                    </div>
+                    <div class="stat-glow"></div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Stats Section -->
-    <section class="stats">
-        <div class="container">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <span class="stat-number">1500+</span>
-                    <span class="stat-label">Attendees Inspired</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">50+</span>
-                    <span class="stat-label">Exceptional Speakers</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">8</span>
-                    <span class="stat-label">Years of Excellence</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">2.5M+</span>
-                    <span class="stat-label">Global Reach</span>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- <section class="stats">
+        <
+    </section> -->
 
     <!-- Team Section -->
     <section class="team">
@@ -951,7 +289,50 @@
             </div>
         </div>
     </section>
+    </main>
+       <!-- footer
+    ================================================== -->
+    <footer class="s-footer">
+        <div class="row row-y-top">
 
+            <div class="column large-8 medium-12">
+                <div class="row">
+                    <div class="column large-7 tab-12 s-footer__block">
+                        <h4 class="h6">Where to Find Us</h4>
+        
+                        <p>
+                            Sector – 43, Delhi–Surajkund <br>
+                            Road Faridabad – 121004 <br>
+                            Haryana, India <br>
+                        <a href="tel:197-543-2345">+91-129-4268500</a>
+                        </p>
+                    </div>
+        
+                    <div class="column large-5 tab-12 s-footer__block">
+                        <h4 class="h6">Follow Us</h4 class="h6">
+        
+                        <ul class="s-footer__list">
+                            <li><a href="#0">LinkedIn</a></li>
+                            <li><a href="#0">WhatsApp</a></li>
+                            <li><a href="#0">Instagram</a></li>
+                            <li><a href="#0">Discord</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="column large-4 medium-12 s-footer__block--end">
+                <a href="mailto:#0" class="btn h-full-width">Our Brochure</a>
+
+
+            <div class="ss-go-top">
+                <a class="smoothscroll" title="Back to Top" href="#top">
+                    <i class="fa fa-arrow-up" aria-hidden="true"></i>
+                </a>
+            </div> <!-- end ss-go-top -->
+
+        </div>
+    </footer>
     <script>
         // Loading Screen
         window.addEventListener('load', () => {
@@ -1272,52 +653,6 @@
             }, 100);
         });
     </script>
-</body>
-</html>
-
-       <!-- footer
-    ================================================== -->
-    <footer class="s-footer">
-        <div class="row row-y-top">
-
-            <div class="column large-8 medium-12">
-                <div class="row">
-                    <div class="column large-7 tab-12 s-footer__block">
-                        <h4 class="h6">Where to Find Us</h4>
-        
-                        <p>
-                            Sector – 43, Delhi–Surajkund <br>
-                            Road Faridabad – 121004 <br>
-                            Haryana, India <br>
-                        <a href="tel:197-543-2345">+91-129-4268500</a>
-                        </p>
-                    </div>
-        
-                    <div class="column large-5 tab-12 s-footer__block">
-                        <h4 class="h6">Follow Us</h4 class="h6">
-        
-                        <ul class="s-footer__list">
-                            <li><a href="#0">LinkedIn</a></li>
-                            <li><a href="#0">WhatsApp</a></li>
-                            <li><a href="#0">Instagram</a></li>
-                            <li><a href="#0">Discord</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="column large-4 medium-12 s-footer__block--end">
-                <a href="mailto:#0" class="btn h-full-width">Our Brochure</a>
-
-
-            <div class="ss-go-top">
-                <a class="smoothscroll" title="Back to Top" href="#top">
-                    <i class="fa fa-arrow-up" aria-hidden="true"></i>
-                </a>
-            </div> <!-- end ss-go-top -->
-
-        </div>
-    </footer>
         <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
