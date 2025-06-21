@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact TEDx MRU</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/vendor.css">
+    
+    <!-- Add the navbar styles and contact page styles here -->
     <style>
         * {
             margin: 0;
@@ -381,7 +387,39 @@
         }
     </style>
 </head>
-<body>
+<body id="top">
+
+    <!-- header -->
+    <header class="s-header">
+        <div class="s-header__logo">
+            <a class="inlogo" href="index.html">
+                <!-- <img src="/images/photoswipe/logo-white.png" alt="Homepage"> -->
+            </a>
+        </div>
+
+        <div class="s-header__content">
+            <nav class="s-header__nav-wrap">
+                <ul class="s-header__nav">
+                    <li><a href="index.html" title="Intro">Home</a></li>
+                    <li><a href="about.html" title="About">About</a></li>
+                    <li><a href="event.html" title="Services">Events</a></li>
+                    <li><a href="contact.html" title="Works">Contact</a></li>
+                    <li><div id="theme-switch" class="switch">
+                        <div class="toggle"></div>
+                    </div>
+                    </li>
+                </ul>
+            </nav>
+
+            <a href="mailto:#0" class="btn btn--primary btn--small">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 0l-6 22-8.129-7.239 7.802-8.234-10.458 7.227-7.215-1.754 24-12zm-15 16.668v7.332l3.258-4.431-3.258-2.901z"/></svg>
+                Download our brochure   
+            </a>
+        </div>
+
+        <a class="s-header__menu-toggle" href="#0"><span>Menu</span></a>
+    </header>
+
     <!-- Particle Background -->
     <div class="particles-container" id="particles"></div>
     
