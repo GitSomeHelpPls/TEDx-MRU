@@ -1,403 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="no-js" lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact TEDx MRU</title>
-    
-    <!-- CSS -->
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>TEDˣ MRU</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS
+    ================================================== -->
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="/contact.css">
+
+    <!-- script
+    ================================================== -->
+    <script src="/js/switch.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <script src="js/modernizr.js"></script>
+    <script defer src="js/fontawesome//js/all.min.js"></script>
+    <script src="/js/fontawesome/js/brands.js"></script>
     
-    <!-- Add the navbar styles and contact page styles here -->
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
 
-        body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(45deg, #f8f9fa 0%, #ffffff 25%, #f1f3f4 50%, #ffffff 75%, #f8f9fa 100%);
-            background-size: 400% 400%;
-            animation: gradient-move 15s ease infinite;
-            color: #2c3e50;
-            min-height: 100vh;
-            line-height: 1.6;
-            position: relative;
-            overflow-x: hidden;
-        }
 
-        @keyframes gradient-move {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
+    <!-- favicons
+    ================================================== -->
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
 
-        /* Particle Background */
-        .particles-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 1;
-        }
-
-        .particle {
-            position: absolute;
-            background: radial-gradient(circle, rgba(229, 62, 62, 0.8) 0%, rgba(229, 62, 62, 0.3) 70%, transparent 100%);
-            border-radius: 50%;
-            pointer-events: none;
-        }
-
-        .particle-1 {
-            width: 4px;
-            height: 4px;
-            animation: float-1 20s infinite linear;
-        }
-
-        .particle-2 {
-            width: 6px;
-            height: 6px;
-            animation: float-2 25s infinite linear;
-        }
-
-        .particle-3 {
-            width: 3px;
-            height: 3px;
-            animation: float-3 30s infinite linear;
-        }
-
-        .particle-4 {
-            width: 5px;
-            height: 5px;
-            animation: float-4 22s infinite linear;
-        }
-
-        .particle-5 {
-            width: 7px;
-            height: 7px;
-            animation: float-5 28s infinite linear;
-        }
-
-        @keyframes float-1 {
-            0% { transform: translate(-10px, 100vh) rotate(0deg); opacity: 0; }
-            10% { opacity: 1; }
-            90% { opacity: 1; }
-            100% { transform: translate(100px, -10vh) rotate(360deg); opacity: 0; }
-        }
-
-        @keyframes float-2 {
-            0% { transform: translate(-10px, 100vh) rotate(0deg); opacity: 0; }
-            15% { opacity: 0.8; }
-            85% { opacity: 0.8; }
-            100% { transform: translate(-50px, -10vh) rotate(-360deg); opacity: 0; }
-        }
-
-        @keyframes float-3 {
-            0% { transform: translate(-10px, 100vh) rotate(0deg); opacity: 0; }
-            12% { opacity: 0.6; }
-            88% { opacity: 0.6; }
-            100% { transform: translate(80px, -10vh) rotate(180deg); opacity: 0; }
-        }
-
-        @keyframes float-4 {
-            0% { transform: translate(-10px, 100vh) rotate(0deg); opacity: 0; }
-            8% { opacity: 0.9; }
-            92% { opacity: 0.9; }
-            100% { transform: translate(-80px, -10vh) rotate(-180deg); opacity: 0; }
-        }
-
-        @keyframes float-5 {
-            0% { transform: translate(-10px, 100vh) rotate(0deg); opacity: 0; }
-            20% { opacity: 0.7; }
-            80% { opacity: 0.7; }
-            100% { transform: translate(120px, -10vh) rotate(270deg); opacity: 0; }
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .header-section {
-            text-align: center;
-            margin-bottom: 60px;
-            padding: 40px 0;
-        }
-
-        .main-title {
-            font-size: 3.5rem;
-            font-weight: 300;
-            color: #1a1a1a;
-            margin-bottom: 15px;
-            position: relative;
-        }
-
-        .main-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background: linear-gradient(90deg, #e53e3e, #000000);
-        }
-
-        .subtitle {
-            font-size: 1.1rem;
-            color: #666;
-            margin-top: 25px;
-            font-weight: 400;
-        }
-
-        .content-wrapper {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            margin-top: 50px;
-        }
-
-        .info-section {
-            background: white;
-            border-radius: 15px;
-            padding: 35px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-            border: 1px solid #e2e8f0;
-        }
-
-        .form-section {
-            background: white;
-            border-radius: 15px;
-            padding: 35px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-            border: 1px solid #e2e8f0;
-        }
-
-        .section-header {
-            font-size: 1.8rem;
-            color: #2d3748;
-            margin-bottom: 25px;
-            font-weight: 600;
-            border-bottom: 2px solid #e53e3e;
-            padding-bottom: 8px;
-            display: inline-block;
-        }
-
-        .contact-item {
-            margin-bottom: 20px;
-            padding: 15px 0;
-            border-bottom: 1px solid #f7fafc;
-        }
-
-        .contact-item:last-child {
-            border-bottom: none;
-        }
-
-        .contact-label {
-            font-size: 0.85rem;
-            color: #e53e3e;
-            text-transform: uppercase;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            margin-bottom: 5px;
-        }
-
-        .contact-value {
-            font-size: 1rem;
-            color: #4a5568;
-            font-weight: 400;
-        }
-
-        .social-section {
-            margin-top: 30px;
-            padding-top: 25px;
-            border-top: 1px solid #e2e8f0;
-        }
-
-        .social-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-            margin-top: 15px;
-        }
-
-        .social-item {
-            display: flex;
-            align-items: center;
-            padding: 12px 15px;
-            background: #f8f9fa;
-            border-radius: 8px;
-            text-decoration: none;
-            color: #4a5568;
-            transition: all 0.3s ease;
-            border: 1px solid #e2e8f0;
-        }
-
-        .social-item:hover {
-            background: #e53e3e;
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(229, 62, 62, 0.3);
-        }
-
-        .social-icon {
-            width: 20px;
-            height: 20px;
-            margin-right: 8px;
-            font-weight: bold;
-            text-align: center;
-        }
-
-        .brochure-link {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 12px 25px;
-            background: #2d3748;
-            color: white;
-            text-decoration: none;
-            border-radius: 25px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            text-align: center;
-        }
-
-        .brochure-link:hover {
-            background: #e53e3e;
-            transform: scale(1.05);
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-label {
-            display: block;
-            margin-bottom: 6px;
-            color: #2d3748;
-            font-weight: 500;
-            font-size: 0.9rem;
-        }
-
-        .form-input,
-        .form-textarea {
-            width: 100%;
-            padding: 12px 15px;
-            border: 2px solid #e2e8f0;
-            border-radius: 8px;
-            font-size: 1rem;
-            color: #2d3748;
-            transition: all 0.3s ease;
-            background: #f8f9fa;
-        }
-
-        .form-input:focus,
-        .form-textarea:focus {
-            outline: none;
-            border-color: #e53e3e;
-            background: white;
-            box-shadow: 0 0 0 3px rgba(229, 62, 62, 0.1);
-        }
-
-        .form-textarea {
-            resize: vertical;
-            min-height: 100px;
-        }
-
-        .submit-button {
-            width: 100%;
-            padding: 15px;
-            background: linear-gradient(135deg, #e53e3e 0%, #2d3748 100%);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .submit-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(229, 62, 62, 0.3);
-        }
-
-        .submit-button:active {
-            transform: translateY(0);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .main-title {
-                font-size: 2.5rem;
-            }
-            
-            .content-wrapper {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-            
-            .info-section,
-            .form-section {
-                padding: 25px;
-            }
-            
-            .social-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Clean animations */
-        .info-section,
-        .form-section {
-            animation: slideUp 0.6s ease-out;
-        }
-
-        .form-section {
-            animation-delay: 0.2s;
-        }
-
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Subtle accent elements */
-        .accent-dot {
-            display: inline-block;
-            width: 8px;
-            height: 8px;
-            background: #e53e3e;
-            border-radius: 50%;
-            margin: 0 8px;
-        }
-    </style>
 </head>
-<body id="top">
 
-    <!-- header -->
+<body id="top">
+    <div class="event-animated-bg"></div>
+    <!-- preloader
+    ================================================== -->
+    <div id="preloader">
+        <div id="loader" class="dots-fade">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+
+    <!-- header
+    ================================================== -->
     <header class="s-header">
+
         <div class="s-header__logo">
             <a class="inlogo" href="index.html">
                 <!-- <img src="/images/photoswipe/logo-white.png" alt="Homepage"> -->
             </a>
         </div>
-
         <div class="s-header__content">
+    
             <nav class="s-header__nav-wrap">
                 <ul class="s-header__nav">
                     <li><a href="index.html" title="Intro">Home</a></li>
@@ -409,167 +74,475 @@
                     </div>
                     </li>
                 </ul>
-            </nav>
+            </nav> <!-- end s-header__nav-wrap -->
+            
 
-            <a href="mailto:#0" class="btn btn--primary btn--small">
+            <!-- <a href="mailto:#0" class="btn btn--primary btn--small">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 0l-6 22-8.129-7.239 7.802-8.234-10.458 7.227-7.215-1.754 24-12zm-15 16.668v7.332l3.258-4.431-3.258-2.901z"/></svg>
                 Download our brochure   
-            </a>
-        </div>
+            </a> -->
+
+        </div> <!-- end header-content -->
 
         <a class="s-header__menu-toggle" href="#0"><span>Menu</span></a>
-    </header>
 
-    <!-- Particle Background -->
-    <div class="particles-container" id="particles"></div>
-    
-    <div class="container">
-        <div class="header-section">
-            <h1 class="main-title">Contact Us</h1>
-            <p class="subtitle">Let's connect and bring ideas worth spreading to life</p>
+    </header> <!-- end s-header -->
+
+    <!-- Contact Hero Section -->
+    <section class="contact-hero">
+        <div class="floating-particles"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Get In Touch</h1>
+            <p class="hero-subtitle">Ready to spark conversations that matter? We'd love to hear from you.</p>
+            <div class="hero-icon">
+                <i class="fas fa-paper-plane"></i>
+            </div>
         </div>
+        <div class="hero-wave">
+            <!-- Animated SVG Blob -->
+            <!-- <svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" class="hero-blob">
+                <defs>
+                    <linearGradient id="blobGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#EB0028"/>
+                        <stop offset="100%" stop-color="#ff4757"/>
+                    </linearGradient>
+                </defs>
+                <path>
+                    <animate attributeName="d" dur="8s" repeatCount="indefinite"
+                        values="
+                            M0,80 Q300,120 600,80 T1200,80 V120 H0 Z;
+                            M0,100 Q300,40 600,100 T1200,100 V120 H0 Z;
+                            M0,80 Q300,120 600,80 T1200,80 V120 H0 Z
+                        "
+                    />
+                </path>
+                <path fill="url(#blobGradient)" opacity="0.7"
+                    d="M0,80 Q300,120 600,80 T1200,80 V120 H0 Z"/>
+            </svg>
+        </div> -->
+    </section>
 
-        <div class="content-wrapper">
-            <div class="info-section">
-                <h2 class="section-header">Get in Touch</h2>
+    <!-- Contact Content -->
+    <section class="contact-content">
+        <div class="container">
+            <div class="contact-grid">
                 
-                <div class="contact-item">
-                    <div class="contact-label">Our Location</div>
-                    <div class="contact-value">
-                        Sector – 43, Delhi–Surajkund Road<br>
-                        Faridabad – 121004<br>
-                        Haryana, India
-                    </div>
-                </div>
-
-                <div class="contact-item">
-                    <div class="contact-label">Phone Number</div>
-                    <div class="contact-value">+91-129-4268500</div>
-                </div>
-
-                <div class="social-section">
-                    <h3 class="section-header">Follow Us</h3>
-                    <div class="social-grid">
-                        <a href="#" class="social-item">
-                            <span class="social-icon">in</span>
-                            LinkedIn
-                        </a>
-                        <a href="#" class="social-item">
-                            <span class="social-icon">📱</span>
-                            WhatsApp
-                        </a>
-                        <a href="#" class="social-item">
-                            <span class="social-icon">📷</span>
-                            Instagram
-                        </a>
-                        <a href="#" class="social-item">
-                            <span class="social-icon">🎮</span>
-                            Discord
-                        </a>
+                <!-- Contact Form -->
+                <div class="contact-form-section">
+                    <div class="form-header">
+                        <h2>Send Us a Message</h2>
+                        <p>Whether you have a question, feedback, or want to collaborate, we're here to listen.</p>
                     </div>
                     
-                    <a href="#" class="brochure-link">
-                        📄 Download Our Brochure
-                    </a>
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <div class="input-wrapper">
+                                <input type="text" id="name" name="name" required>
+                                <label for="name">Your Name</label>
+                                <span class="focus-border"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="input-wrapper">
+                                <input type="email" id="email" name="email" required>
+                                <label for="email">Email Address</label>
+                                <span class="focus-border"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="input-wrapper">
+                                <input type="tel" id="phone" name="phone">
+                                <label for="phone">Phone Number</label>
+                                <span class="focus-border"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="input-wrapper">
+                                <select id="subject" name="subject" required>
+                                    <option value="">Select a topic</option>
+                                    <option value="speaker">Speaker Application</option>
+                                    <option value="volunteer">Volunteer Opportunity</option>
+                                    <option value="partnership">Partnership</option>
+                                    <option value="media">Media Inquiry</option>
+                                    <option value="general">General Question</option>
+                                </select>
+                                <label for="subject">Subject</label>
+                                <span class="focus-border"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="input-wrapper">
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                                <label for="message">Your Message</label>
+                                <span class="focus-border"></span>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">
+                            <span class="btn-text">Send Message</span>
+                            <span class="btn-icon"><i class="fas fa-arrow-right"></i></span>
+                            <div class="btn-ripple"></div>
+                        </button>
+                    </form>
+                    <div class="social-section">
+                        <h4>Follow Our Journey</h4>
+                        <div class="social-links">
+                            <a href="#" class="social-link">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-            </div>
-
-            <div class="form-section">
-                <h2 class="section-header">Send Message</h2>
                 
-                <form id="contactForm">
-                    <div class="form-group">
-                        <label class="form-label" for="name">Your Name</label>
-                        <input type="text" id="name" name="name" class="form-input" required>
+                <!-- Contact Info -->
+                <div class="contact-info-section">
+                    <div class="info-card">
+                        <div class="card-header">
+                            <h3>Let's Connect</h3>
+                            <p>Multiple ways to reach us</p>
+                        </div>
+                        
+                        <div class="info-items">
+                            <div class="info-item">
+                                <div class="info-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="info-content">
+                                    <h4>Visit Us</h4>
+                                    <p>Sector – 43, Delhi–Surajkund<br>
+                                    Road Faridabad – 121004<br>
+                                    Haryana, India</p>
+                                </div>
+                            </div>
+                            
+                            <div class="info-item">
+                                <div class="info-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div class="info-content">
+                                    <h4>Call Us</h4>
+                                    <p>+91-129-4268500</p>
+                                </div>
+                            </div>
+                            
+                            <div class="info-item">
+                                <div class="info-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="info-content">
+                                    <h4>Email Us</h4>
+                                    <p>hello@tedxmru.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="info-item">
+                                <div class="info-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="info-content">
+                                    <h4>Office Hours</h4>
+                                    <p>Mon - Fri: 9:00 AM - 6:00 PM<br>
+                                    Sat: 10:00 AM - 4:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-
-                    <div class="form-group">
-                        <label class="form-label" for="email">Email Address</label>
-                        <input type="email" id="email" name="email" class="form-input" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label" for="subject">Subject</label>
-                        <input type="text" id="subject" name="subject" class="form-input" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label" for="message">Your Message</label>
-                        <textarea id="message" name="message" class="form-textarea" required></textarea>
-                    </div>
-
-                    <button type="submit" class="submit-button">Send Message</button>
-                </form>
+                    
+                    <!-- Social Links -->
+                    
+                </div>
+                
             </div>
         </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="map-container">
+            <div class="map-overlay">
+                <div class="map-info">
+                    <h3>Find Us Here</h3>
+                    <p>TEDx MRU Campus</p>
+                    <a href="#" class="directions-btn">Get Directions</a>
+                </div>
+            </div>
+            <div class="map-placeholder">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3507.7629456143167!2d77.31402631455277!3d28.42443928249413!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cdb7b0b0b0b0b%3A0x0!2sManav%20Rachna%20University!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin"
+                    width="100%" 
+                    height="400" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <!-- <section class="faq-section">
+        <div class="container">
+            <div class="faq-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Quick answers to common questions</p>
+            </div>
+            
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>How can I become a speaker at TEDx MRU?</h4>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Submit your speaker application through our contact form or email us directly. We look for passionate individuals with ideas worth spreading.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>How can I volunteer for TEDx MRU events?</h4>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We welcome volunteers! Contact us through the form above or follow our social media for volunteer opportunities announcements.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>When is the next TEDx MRU event?</h4>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Event dates are announced on our website and social media channels. Stay connected to be the first to know!</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Can I partner with TEDx MRU?</h4>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! We welcome partnerships with organizations that share our vision. Contact us to discuss collaboration opportunities.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loading">
+        <div class="loader"></div>
     </div>
 
+    <!-- Contact Page Scripts -->
     <script>
-        // Create floating particles
-        function createParticles() {
-            const particlesContainer = document.getElementById('particles');
-            const particleCount = 50;
-
-            for (let i = 0; i < particleCount; i++) {
-                const particle = document.createElement('div');
-                particle.className = `particle particle-${(i % 5) + 1}`;
-                
-                // Random horizontal position
-                const leftPosition = Math.random() * 100;
-                particle.style.left = leftPosition + '%';
-                
-                // Random animation delay
-                const delay = Math.random() * 20;
-                particle.style.animationDelay = delay + 's';
-                
-                // Add some variety to the particle appearance
-                const opacity = 0.3 + Math.random() * 0.4;
-                particle.style.opacity = opacity;
-                
-                particlesContainer.appendChild(particle);
-            }
-        }
-
-        // Initialize particles when page loads
-        document.addEventListener('DOMContentLoaded', createParticles);
-
-        // Form submission with smooth feedback
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
+        // Form Animation and Validation
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('contactForm');
+            const inputs = form.querySelectorAll('input, textarea, select');
             
-            const submitBtn = this.querySelector('.submit-button');
-            const originalText = submitBtn.textContent;
-            
-            // Loading state
-            submitBtn.textContent = 'Sending...';
-            submitBtn.style.background = 'linear-gradient(135deg, #718096 0%, #4a5568 100%)';
-            submitBtn.disabled = true;
-            
-            // Simulate sending
-            setTimeout(() => {
-                submitBtn.textContent = 'Message Sent!';
-                submitBtn.style.background = 'linear-gradient(135deg, #38a169 0%, #2f855a 100%)';
+            // Input focus animations
+            inputs.forEach(input => {
+                input.addEventListener('focus', function() {
+                    this.parentElement.classList.add('focused');
+                });
                 
-                // Reset after delay
-                setTimeout(() => {
-                    submitBtn.textContent = originalText;
-                    submitBtn.style.background = 'linear-gradient(135deg, #e53e3e 0%, #2d3748 100%)';
-                    submitBtn.disabled = false;
-                    this.reset();
-                }, 2000);
-            }, 1500);
-        });
-
-        // Add smooth scroll behavior for better UX
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+                input.addEventListener('blur', function() {
+                    if (this.value === '') {
+                        this.parentElement.classList.remove('focused');
+                    }
+                });
+                
+                // Check if input has value on load
+                if (input.value !== '') {
+                    input.parentElement.classList.add('focused');
+                }
+            });
+            
+            // Form submission
+            form.addEventListener('submit', function(e) {
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
+                
+                const submitBtn = form.querySelector('.submit-btn');
+                const btnText = submitBtn.querySelector('.btn-text');
+                const btnIcon = submitBtn.querySelector('.btn-icon');
+                
+                // Animation
+                submitBtn.classList.add('loading');
+                btnText.textContent = 'Sending...';
+                btnIcon.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+                
+                // Simulate form submission
+                setTimeout(() => {
+                    submitBtn.classList.remove('loading');
+                    submitBtn.classList.add('success');
+                    btnText.textContent = 'Message Sent!';
+                    btnIcon.innerHTML = '<i class="fas fa-check"></i>';
+                    
+                    // Reset form
+                    setTimeout(() => {
+                        form.reset();
+                        submitBtn.classList.remove('success');
+                        btnText.textContent = 'Send Message';
+                        btnIcon.innerHTML = '<i class="fas fa-arrow-right"></i>';
+                        
+                        inputs.forEach(input => {
+                            input.parentElement.classList.remove('focused');
+                        });
+                    }, 3000);
+                }, 2000);
+            });
+        });
+        
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function () {
+                const faqItem = this.parentElement;
+                const icon = this.querySelector('i');
+
+                // If already open, close it
+                if (faqItem.classList.contains('active')) {
+                    faqItem.classList.remove('active');
+                    icon.classList.remove('fa-minus');
+                    icon.classList.add('fa-plus');
+                } else {
+                    // Close all others
+                    document.querySelectorAll('.faq-item').forEach(item => {
+                        item.classList.remove('active');
+                        item.querySelector('i').classList.remove('fa-minus');
+                        item.querySelector('i').classList.add('fa-plus');
+                    });
+                    // Open this one
+                    faqItem.classList.add('active');
+                    icon.classList.remove('fa-plus');
+                    icon.classList.add('fa-minus');
                 }
             });
         });
+        
+        // Floating particles animation
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.animationDuration = (Math.random() * 15 + 10) + 's';
+            
+            const size = Math.random() * 4 + 2;
+            particle.style.width = size + 'px';
+            particle.style.height = size + 'px';
+            
+            document.querySelector('.floating-particles').appendChild(particle);
+            
+            setTimeout(() => {
+                particle.remove();
+            }, 25000);
+        }
+        
+        // Create particles continuously
+        setInterval(createParticle, 800);
+        
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
+        
+        // Observe elements for animation
+        document.querySelectorAll('.contact-form-section, .contact-info-section, .faq-item').forEach(el => {
+            observer.observe(el);
+        });
+        
+        // Ripple effect for button
+        document.querySelector('.submit-btn').addEventListener('click', function(e) {
+            const ripple = this.querySelector('.btn-ripple');
+            const rect = this.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            ripple.style.left = x + 'px';
+            ripple.style.top = y + 'px';
+            ripple.classList.add('active');
+            
+            setTimeout(() => {
+                ripple.classList.remove('active');
+            }, 600);
+        });
     </script>
+
+       <!-- footer
+    ================================================== -->
+    <footer class="s-footer" style="background: black !important;">
+        <div class="row row-y-top">
+
+            <div class="column large-8 medium-12">
+                <div class="row">
+                    <div class="column large-7 tab-12 s-footer__block">
+                        <h4 class="h6">Where to Find Us</h4>
+        
+                        <p>
+                            Sector – 43, Delhi–Surajkund <br>
+                            Road Faridabad – 121004 <br>
+                            Haryana, India <br>
+                        <a href="tel:197-543-2345">+91-129-4268500</a>
+                        </p>
+                    </div>
+        
+                    <div class="column large-5 tab-12 s-footer__block">
+                        <h4 class="h6">Follow Us</h4 class="h6">
+        
+                        <ul class="s-footer__list">
+                            <li><a href="#0">LinkedIn</a></li>
+                            <li><a href="#0">WhatsApp</a></li>
+                            <li><a href="#0">Instagram</a></li>
+                            <li><a href="#0">Discord</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="column large-4 medium-12 s-footer__block--end">
+                <!-- <a href="mailto:#0" class="btn h-full-width">Our Brochure</a> -->
+
+
+            <div class="ss-go-top">
+                <a class="smoothscroll" title="Back to Top" href="#top">
+                    <i class="fa fa-arrow-up" aria-hidden="true"></i>
+                </a>
+            </div> <!-- end ss-go-top -->
+
+        </div>
+    </footer>
+        <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+
 </body>
+
 </html>

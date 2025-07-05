@@ -40,8 +40,10 @@
 </head>
 
 <body id="top">
+    <!-- Place the background as the very first child of body -->
+    
 
-
+    <!-- All other content follows -->
     <!-- preloader
     ================================================== -->
     <div id="preloader">
@@ -79,10 +81,10 @@
             </nav> <!-- end s-header__nav-wrap -->
             
 
-            <a href="mailto:#0" class="btn btn--primary btn--small">
+            <!-- <a href="mailto:#0" class="btn btn--primary btn--small">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 0l-6 22-8.129-7.239 7.802-8.234-10.458 7.227-7.215-1.754 24-12zm-15 16.668v7.332l3.258-4.431-3.258-2.901z"/></svg>
                 Download our brochure   
-            </a>
+            </a> -->
 
         </div> <!-- end header-content -->
 
@@ -99,17 +101,20 @@
     </div>
 <main>
     <!-- Hero Section -->
+     <div class="event-animated-bg"></div>
     <section class="hero">
+        <div class="event-animated-bg"></div>
         <div class="morphing-bg"></div>
         <div class="particle-system" id="particles"></div>
         <div class="hero-content">
-            <h1>TEDxMRU</h1>
+            <h1>TEDx <span class="text-white">MRU</span> </h1>
             <p class="hero-subtitle">Ideas Worth Spreading</p>
         </div>
     </section>
 
     <!-- Mission Section -->
     <section class="mission">
+        <div class="event-animated-bg"></div>
         <div class="floating-elements mission-floating">
             <div class="float-item"></div>
             <div class="float-item"></div>
@@ -130,7 +135,7 @@
                             <div class="mission-features">
                                 <div class="feature-item">
                                     <div class="feature-icon">🎯</div>
-                                    <span>Annual flagship conference</span>s
+                                    <span>Annual flagship conference</span>
                                 </div>
                                 <div class="feature-item">
                                     <div class="feature-icon">🎓</div>
@@ -243,6 +248,7 @@
 
     <!-- Team Section -->
     <section class="team">
+        <div class="event-animated-bg"></div>
         <div class="container">
             <h2 class="section-title">Our Dream Team</h2>
             <div class="team-grid">
@@ -267,6 +273,7 @@
 
     <!-- Values Section -->
     <section class="values">
+        <div class="event-animated-bg"></div>
         <div class="values-bg"></div>
         <div class="container">
             <h2 class="section-title">Our Core Values</h2>
@@ -292,7 +299,7 @@
     </main>
        <!-- footer
     ================================================== -->
-    <footer class="s-footer">
+    <footer class="s-footer" style="background: black !important;">
         <div class="row row-y-top">
 
             <div class="column large-8 medium-12">
@@ -322,7 +329,7 @@
             </div>
 
             <div class="column large-4 medium-12 s-footer__block--end">
-                <a href="mailto:#0" class="btn h-full-width">Our Brochure</a>
+                <!-- <a href="mailto:#0" class="btn h-full-width">Our Brochure</a> -->
 
 
             <div class="ss-go-top">
@@ -658,5 +665,4 @@
     <script src="js/main.js"></script>
 
 </body>
-
 </html>
